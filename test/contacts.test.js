@@ -21,7 +21,7 @@ describe('app routes', () => {
   });
 
   it('gets all contacts', async() => {
-    const contact = await Contact.create({ name: 'Lili', phoneNumber: 1234567890 });
+    const contact = await Contact.create({ name: 'Lili', phoneNumber: '1234567890' });
     return request(app)
       .get('/api/v1/contacts')
       .then(res => {
@@ -31,7 +31,7 @@ describe('app routes', () => {
   });
 
   it('gets contact by id', async() => {
-    const contact = await Contact.create({ name: 'Max', phoneNumber: 1234567890 });
+    const contact = await Contact.create({ name: 'Max', phoneNumber: '1234567890' });
     return request(app)
       .get(`/api/v1/contacts/${contact._id}`)
       .then(res => {
@@ -39,7 +39,7 @@ describe('app routes', () => {
           _id: expect.any(String),
           __v: 0,
           name: 'Max',
-          phoneNumber: 1234567890
+          phoneNumber: '1234567890'
         });
       });
   });
@@ -49,14 +49,14 @@ describe('app routes', () => {
       .post('/api/v1/contacts')
       .send({
         name: 'Max the kitty',
-        phoneNumber: 6666666666
+        phoneNumber: '6666666666'
       })
       .then(res => {
         expect(res.body).toEqual({
           __v: 0,
           _id: expect.any(String),
           name: 'Max the kitty',
-          phoneNumber: 6666666666
+          phoneNumber: '6666666666'
         });
       });
   });
