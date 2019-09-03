@@ -43,4 +43,21 @@ describe('app routes', () => {
         });
       });
   });
+
+  it('creates contact', () => {
+    return request(app)
+      .post('/api/v1/contacts')
+      .send({
+        name: 'Max the kitty',
+        phoneNumber: 6666666666
+      })
+      .then(res => {
+        expect(res.body).toEqual({
+          __v: 0,
+          _id: expect.any(String),
+          name: 'Max the kitty',
+          phoneNumber: 6666666666
+        });
+      });
+  });
 });
