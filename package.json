@@ -17,13 +17,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^24.0.18",
-    "cors": "^2.8.5",
     "eslint": "^6.3.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.2",
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.12"
